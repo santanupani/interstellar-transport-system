@@ -1,0 +1,84 @@
+Technologies used
+---------------------------
+*Java 1.8 or later
+*Spring-boot 2.1.3
+*H2 in-memory database
+*Hibernate & JPA
+*JAX-RS
+*Angular 7
+*Swagger2
+
+
+Front end presentation layer
+----------------------------
+*Angular 7 is being used for the UI with bootstrap. Further modules can be added to present better UI for client interaction.
+*Run this command to start the application: 
+	-First go to the directory where jar file is located. 
+	-run in cmd  java -jar {jarfile nmae}
+*Once application started use below url to access in UI
+*The landing page URL is http://localhost:8080
+
+
+Application back end resource Access
+---------------------------
+*Once application started, the data populated from class path.
+*Database URL: http://localhost:8080/h2
+*User name and password mentioned in application.properties
+*For testing rest service operations, SWagger implementation is done
+*Swagger URL: http://localhost:8080/swagger-ui.html
+
+
+Application start up point
+---------------------------
+*On application start up, spring-boot context is initialized.
+The method init() annoated with @PosConstruct in tBootstrapDataLoader.java invoked and reads XLS data from class path file.
+*Insert all the rows from XLS file into database.
+
+Spring MVC pattern
+---------------------------
+*Classes are grouped according to their need.
+*x.x.x.x.xxcontroller => This package contains classes those exposes service endpoints to client
+*x.x.x.x.xxentity => This package contains model & entity classes.
+*x.x.x.x.xxexception => This package contains custom exception classes being used in application.
+*x.x.x.x.xxrepository => This package contains spring data interfaces that does CRUD operation.
+*x.x.x.x.xxservice => This package takes order from Controller classes and serve response.
+*x.x.x.x.xxboostrap => This package contains class that being executed on application bootstrap.
+*x.x.x.transport => This is the package that holds spring boot application class, entry point class in whole application.
+
+
+Entity Mapping (ORM)
+---------------------------
+*Two entity classes such Planet.java & Route.java are being used.
+*Mapped as one-to-one unidirectional, the association is created in Route.java(Route--->Planet).
+*A bi-directional & deep relationship can be established for further performance enhancement.
+
+
+Business Logic
+----------------------------
+
+*This ShortestPathServiceImp.java contains DijkstraAlgorithm business logic for finding shortest path.
+*It uses SimpleDirectedWeightedGraph for handling vertext & edge.
+*It uses strategy design pattern for finding shortest path among nodes.
+
+
+Rest layer
+----------------------------
+*This class ShortestPathController.java responsible for handling shortest path request from client, 
+*Further invokes ShortestPathService.java interface method for assistance.
+*Sample rest request: http://localhost:8080/api/shortestPath/{replace origin planet}/{replace destination place}
+*Every controller class has a base url at class level.
+
+
+
+Testing
+---------------------------
+*Will use @SpringBootTest
+
+
+Logging
+---------------------------
+*Will be use Log4j
+
+
+
+
