@@ -22,7 +22,7 @@ import za.co.discovery.transport.service.TransportUtility;
 public class PlanetController {
 
 	@Autowired
-	PlanetService planetService;
+	private PlanetService planetService;
 	
 	@PostMapping()
 	public ResponseEntity<Object> createPlanet(@RequestBody List<Planet> planets){

@@ -3,8 +3,6 @@ package za.co.discovery.transport.service;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.transaction.SystemException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -19,10 +17,10 @@ import za.co.discovery.transport.repository.PlanetRepository;
 @Service
 public class PlanetService {
 	@Autowired
-	PlanetRepository planetRepository;
+	private PlanetRepository planetRepository;
 	
 	@Value(value = "${insertLimit}")
-	String INSERT_LIMIT;
+	private String INSERT_LIMIT;
 
 	/*
 	 * Save inputPlanetList object in batch

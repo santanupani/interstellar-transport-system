@@ -11,7 +11,9 @@ Technologies used
 
 Front end presentation layer
 ----------------------------
-*Angular 7 is being used for the UI with bootstrap. Further modules can be added to present better UI for client interaction.
+*Angular 7 is being used for the UI with bootstrap.
+*A simple UI is working only just to represent shortest path result.
+*Further modules can be added to present better UI for client interaction.
 *Run this command to start the application: 
 	-First go to the directory where jar file is located. 
 	-run in cmd  java -jar {jarfile nmae}
@@ -31,7 +33,7 @@ Application back end resource Access
 Application start up point
 ---------------------------
 *On application start up, spring-boot context is initialized.
-The method init() annoated with @PosConstruct in tBootstrapDataLoader.java invoked and reads XLS data from class path file.
+The method init() annoated with @PosConstruct in BootstrapDataLoader.java invoked and reads XLS data from class path file.
 *Insert all the rows from XLS file into database.
 
 Spring MVC pattern
@@ -56,9 +58,8 @@ Entity Mapping (ORM)
 Business Logic
 ----------------------------
 
-*This ShortestPathServiceImp.java contains DijkstraAlgorithm business logic for finding shortest path.
-*It uses SimpleDirectedWeightedGraph for handling vertext & edge.
-*It uses strategy design pattern for finding shortest path among nodes.
+*This ShortestPathServiceImp.java contains business logic for finding shortest path.
+*It implements Dijkstra’s Shortest Path Algorithm in java
 
 
 Rest layer
@@ -67,17 +68,6 @@ Rest layer
 *Further invokes ShortestPathService.java interface method for assistance.
 *Sample rest request: http://localhost:8080/api/shortestPath/{replace origin planet}/{replace destination place}
 *Every controller class has a base url at class level.
-
-
-
-Testing
----------------------------
-*Will use @SpringBootTest
-
-
-Logging
----------------------------
-*Will be use Log4j
 
 
 

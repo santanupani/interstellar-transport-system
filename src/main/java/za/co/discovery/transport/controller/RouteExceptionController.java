@@ -5,8 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import za.co.discovery.transport.exception.PlanetExistException;
-import za.co.discovery.transport.exception.PlanetNotFoundException;
 import za.co.discovery.transport.exception.RouteExistException;
 import za.co.discovery.transport.exception.RouteNotExistException;
 

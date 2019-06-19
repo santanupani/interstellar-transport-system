@@ -18,7 +18,7 @@ public class ShortestPathController {
 
 	@Autowired
 	@Lazy
-	ShortestPathService shortestPathService;
+	private ShortestPathService shortestPathService;
 
 
 	@GetMapping(value = "/{origin}/{destination}")

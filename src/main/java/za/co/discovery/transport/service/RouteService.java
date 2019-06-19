@@ -17,10 +17,10 @@ import za.co.discovery.transport.repository.RouteRepository;
 public class RouteService {
 	
 	@Autowired
-	RouteRepository routeRepository;
+	private RouteRepository routeRepository;
 	
 	@Value(value="${insertLimit}")
-	String INSERT_LIMIT;
+	private String INSERT_LIMIT;
 
 	/*this method finds all available routes
 	 * @return Return list of routes object
