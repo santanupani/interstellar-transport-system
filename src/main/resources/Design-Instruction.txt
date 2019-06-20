@@ -28,6 +28,7 @@ Application back end resource Access
 *User name and password mentioned in application.properties
 *For testing rest service operations, SWagger implementation is done
 *Swagger URL: http://localhost:8080/swagger-ui.html
+*Rest URIs are exposed to add a new planet, route. Besides, planets and routes can be also viewed using REST URIs available in Swagger.
 
 
 Application start up point
@@ -39,13 +40,13 @@ The method init() annoated with @PosConstruct in BootstrapDataLoader.java invoke
 Spring MVC pattern
 ---------------------------
 *Classes are grouped according to their need.
-*x.x.x.x.xxcontroller => This package contains classes those exposes service endpoints to client
-*x.x.x.x.xxentity => This package contains model & entity classes.
-*x.x.x.x.xxexception => This package contains custom exception classes being used in application.
-*x.x.x.x.xxrepository => This package contains spring data interfaces that does CRUD operation.
-*x.x.x.x.xxservice => This package takes order from Controller classes and serve response.
-*x.x.x.x.xxboostrap => This package contains class that being executed on application bootstrap.
-*x.x.x.transport => This is the package that holds spring boot application class, entry point class in whole application.
+*x.x.x.controller => This package contains classes those exposes service endpoints to client
+*x.x.x.entity => This package contains model & entity classes.
+*x.x.x.exception => This package contains custom exception classes being used in application.
+*x.x.x.repository => This package contains spring data interfaces that does CRUD operation.
+*x.x.x.service => This package takes order from Controller classes and serve response.
+*x.x.x.boostrap => This package contains class that being executed on application bootstrap.
+*x.x.transport => This is the package that holds spring boot application class, entry point class in whole application.
 
 
 Entity Mapping (ORM)
